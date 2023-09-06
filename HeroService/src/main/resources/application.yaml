@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: hero
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+
+######## MONGODB ##########
+  data:
+    mongodb:
+      #uri: mongodb+srv://alissia:Mushu0311@alissia.nmkh2kn.mongodb.net/?retryWrites=true&w=majority
+      uri: mongodb://localhost:27018/hero_db
+      host: localhost
+      port: 27018
+      #database: hero_db
+      #username: admin
+      #password: password
+
+  ######## KAFKA ##########
+  kafka:
+    bootstrap-servers: localhost:9092
+
+#Activate or disable apiDocs and Swagger
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+    path: /api/swagger-ui.html
+  paths-to-match: /api/**
+
+server:
+  port: 8081

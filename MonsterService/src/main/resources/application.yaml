@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: monster
+
+  ######## MYSQL ##########
+
+  datasource:
+    url: jdbc:mysql://localhost:3307/monster_db
+    username: admin
+    #username: root
+    password: password
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        format-sql: true
+
+  ######## KAFKA ##########
+
+  kafka:
+    bootstrap-servers: localhost:9092
+server:
+  port: 8080
